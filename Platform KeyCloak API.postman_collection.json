@@ -1,0 +1,362 @@
+{
+	"info": {
+		"_postman_id": "5a440e82-519e-4350-974a-caa443aa2060",
+		"name": "Platform KeyCloak API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Keycloak Access Token",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/get-access-token",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"get-access-token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"jo@isportz.co\",\r\n  \"first_name\": \"jo\",\r\n  \"last_name\": \"jin\",\r\n  \"password\": \"12345\",\r\n  \"realm_name\": \"isportz\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/create-user",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"create-user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"user_id\": \"4d89124c-53b9-4715-b12d-819b9b5292f9\",\r\n  \"email\": \"jin2@isportz.co\",\r\n  \"first_name\": \"mohamed\",\r\n  \"last_name\": \"jina\",\r\n  \"password\": \"12345\",\r\n  \"realm_name\": \"isportz\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/update-user",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"update-user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change User Password",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"user_id\": \"4d89124c-53b9-4715-b12d-819b9b5292f9\",\r\n  \"password\": \"54321\",\r\n  \"realm_name\": \"isportz\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/change-user-password",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"change-user-password"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Client Roles",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/get-client-roles?realm_name=isportz&client_id=617fd270-8502-42e6-862e-fab817a1d96e",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"get-client-roles"
+					],
+					"query": [
+						{
+							"key": "realm_name",
+							"value": "isportz"
+						},
+						{
+							"key": "client_id",
+							"value": "617fd270-8502-42e6-862e-fab817a1d96e"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Client",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/get-client?realm_name=isportz&client_id=subscription",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"get-client"
+					],
+					"query": [
+						{
+							"key": "realm_name",
+							"value": "isportz"
+						},
+						{
+							"key": "client_id",
+							"value": "subscription"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/get-user?realm_name=isportz&username=jo",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"get-user"
+					],
+					"query": [
+						{
+							"key": "realm_name",
+							"value": "isportz"
+						},
+						{
+							"key": "username",
+							"value": "jo"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Assign Roles to User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"realm_name\": \"isportz\",\r\n    \"user_id\": \"4d89124c-53b9-4715-b12d-819b9b5292f9\",\r\n    \"client_id\": \"617fd270-8502-42e6-862e-fab817a1d96e\",\r\n    \"multiple_role\":[{\r\n            \"id\": \"acc2806b-a565-408f-9978-4a6c13b87a8c\",\r\n            \"name\": \"Super Admin\",\r\n            \"description\": \"Super Admin\",\r\n            \"composite\": false,\r\n            \"clientRole\": true,\r\n            \"containerId\": \"617fd270-8502-42e6-862e-fab817a1d96e\"\r\n        }]\r\n}"
+				},
+				"url": {
+					"raw": "{{url}}/api/assign-user-roles",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"assign-user-roles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User Role",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/get-user-roles?realm_name=isportz&user_id=4d89124c-53b9-4715-b12d-819b9b5292f9&client_id=617fd270-8502-42e6-862e-fab817a1d96e",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"get-user-roles"
+					],
+					"query": [
+						{
+							"key": "realm_name",
+							"value": "isportz"
+						},
+						{
+							"key": "user_id",
+							"value": "4d89124c-53b9-4715-b12d-819b9b5292f9"
+						},
+						{
+							"key": "client_id",
+							"value": "617fd270-8502-42e6-862e-fab817a1d96e"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User Role",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"realm_name\": \"isportz\",\r\n    \"user_id\": \"4d89124c-53b9-4715-b12d-819b9b5292f9\",\r\n    \"client_id\": \"617fd270-8502-42e6-862e-fab817a1d96e\"\r\n}"
+				},
+				"url": {
+					"raw": "{{url}}/api/delete-user-roles",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"delete-user-roles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/delete-user?realm_name=isportz&user_id=21e10a5a-9de0-478e-950c-ce8e96827cd2",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"delete-user"
+					],
+					"query": [
+						{
+							"key": "realm_name",
+							"value": "isportz"
+						},
+						{
+							"key": "user_id",
+							"value": "21e10a5a-9de0-478e-950c-ce8e96827cd2"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

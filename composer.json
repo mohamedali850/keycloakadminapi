@@ -1,0 +1,25 @@
+{
+    "name": "packages/keycloakapiservices",
+    "description": "This is for keycloak rest api services",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mohamedali Jinna",
+            "email": "mohamedali@isportz.co"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "KeycloakApiServices\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "KeycloakApiServices\\KeycloakApiServiceProvider"
+            ]
+        }
+    }
+}
