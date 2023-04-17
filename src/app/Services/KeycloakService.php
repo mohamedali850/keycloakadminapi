@@ -29,10 +29,10 @@ class KeycloakService
      */
     public function __construct()
     {
-        $this->realm['verify'] = config('keycloakapiservices.realm.name');
+        $this->realm['verify'] = config('keycloakapiservices.realm.verify');//SSL certificate verification behavior of a request
         $this->baseUrl = env('KEYCLOAK_BASE_URL');
-        $this->realm['name'] = config('keycloakapiservices.realm.name');
-        $this->realm['clientId'] = config('app.realm.clientId');
+        //$this->realm['name'] = config('keycloakapiservices.realm.name'); //To get and use dynamic realm name in all the apis
+        //$this->realm['clientId'] = config('app.realm.clientId'); //To get and use dynamic client id in all the apis
         $this->realm['endpoint'] = env('KEYCLOAK_REALM_ENDPOINT');
         $this->client['endpoint'] = env('KEYCLOAK_CLIENTS_ENDPOINT');
         $this->client['roleEndpoint'] = env('KEYCLOAK_ROLES_ENDPOINT');
@@ -139,8 +139,9 @@ class KeycloakService
      * Function to Create new Keycloak client for a given realm
      * @param $request
      * @throws GuzzleException
+     * Refer: https://www.keycloak.org/docs-api/15.0/rest-api/index.html#_clients_resource
      */
-    public function createClient($request)
+    public function createClient($request): array
     {
         try {
             $client = $this->httpClient();
@@ -150,6 +151,12 @@ class KeycloakService
                     'clientId' => $request['client_name'],
                     'enabled' => true,
                     'protocol' => 'openid-connect',
+                    'rootUrl' => $request['root_url'],
+                    'baseUrl' => $request['base_url'],
+                    'redirectUris' => $request['redirect_uris'],
+                    'webOrigins' => $request['web_origins'],
+                    'frontchannelLogout' => true,
+                    'directAccessGrantsEnabled' => true,
                 ],
             ]);
 
@@ -423,14 +430,14 @@ class KeycloakService
      * @return StreamInterface
      * @throws GuzzleException
      */
-    public function getRealmPublicKey($realmName): StreamInterface
+    public function getRealmPublicKey($realmName): array
     {
         try {
             $client = $this->httpClient();
             $response = $client->get($this->baseUrl . $this->realm['endpoint'] . '/' . $realmName . '/keys', [
                 'headers' => $this->requestHeader(),
             ]);
-            return ['message' => 'Realm pulic key retrieved', 'realm ' => json_decode($response->getBody()->getContents()), 'statusCode' => $response->getStatusCode()];
+            return ['message' => 'Realm public key retrieved', 'realm ' => json_decode($response->getBody()->getContents()), 'statusCode' => $response->getStatusCode()];
         } catch (Exception $e) {
             return ['message' => 'Failed to get Keycloak realm public key: ' . $e->getMessage(), 'statusCode' => $e->getCode()];
         }
@@ -639,7 +646,7 @@ class KeycloakService
      * @param $request
      * @throws GuzzleException
      */
-    public function changeUserActiveStatus($request): ResponseInterface
+    public function changeUserActiveStatus($request): array
     {
         try {
             $client = $this->httpClient();

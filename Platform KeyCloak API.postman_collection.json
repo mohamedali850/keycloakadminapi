@@ -129,6 +129,39 @@
 			"response": []
 		},
 		{
+			"name": "Change User Status",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"user_id\": \"4d89124c-53b9-4715-b12d-819b9b5292f9\",\r\n  \"status\": true,\r\n  \"realm_name\": \"isportz\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/change-user-status",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"change-user-status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Get Client Roles",
 			"request": {
 				"method": "GET",
@@ -208,7 +241,7 @@
 					}
 				],
 				"url": {
-					"raw": "{{url}}/api/get-user?realm_name=isportz&username=jo",
+					"raw": "{{url}}/api/get-user?realm_name=isportz&username=moh",
 					"host": [
 						"{{url}}"
 					],
@@ -223,7 +256,7 @@
 						},
 						{
 							"key": "username",
-							"value": "jo"
+							"value": "moh"
 						}
 					]
 				}

@@ -14,6 +14,7 @@ Route::post('create-user', [SingleSignOnController::class, 'createUser']);
 Route::post('update-user', [SingleSignOnController::class, 'updateUser']);
 Route::get('get-user', [SingleSignOnController::class, 'getUser']);
 Route::post('change-user-password', [SingleSignOnController::class, 'changePassword']);
+Route::post('change-user-status', [SingleSignOnController::class, 'changeUserStatus']);
 Route::get('delete-user', [SingleSignOnController::class, 'deleteUser']);
 //User Roles
 Route::post('assign-user-roles', [SingleSignOnController::class, 'assignRoleToUser']);

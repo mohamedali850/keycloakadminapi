@@ -62,7 +62,17 @@ Add the below code in `app/Providers/RouteServiceProvider.php` file inside `boot
     }
 ```
 
-
+Add/config the below variables in your `.env` file with appropriate values. 
+```
+//Keycloak Server Url
+KEYCLOAK_BASE_URL="https://keycloakauth.yourdomain.com"
+KEYCLOAK_REALM_ENDPOINT=/admin/realms
+KEYCLOAK_CLIENTS_ENDPOINT=/clients
+KEYCLOAK_ROLES_ENDPOINT=/roles
+KEYCLOAK_ADMIN_CLIENT_ID=admin-cli
+KEYCLOAK_ADMIN_USERNAME=keycloakadminusername
+KEYCLOAK_ADMIN_PASSWORD="keycloakadminpassword"
+```
 ### Documentation
 
 ### Basic Usage

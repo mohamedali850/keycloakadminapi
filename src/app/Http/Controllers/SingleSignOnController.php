@@ -58,6 +58,16 @@ class SingleSignOnController extends Controller
      * @param Request $request
      * @return JsonResponse
      */
+    public function changeUserStatus(Request $request): JsonResponse
+    {
+        $data = $this->ssoClient->changeUserActiveStatus($request->all());
+        return response()->json(['status' => 'success', 'data' => $data], 200);
+    }
+
+    /**
+     * @param Request $request
+     * @return JsonResponse
+     */
     public function deleteUser(Request $request): JsonResponse
     {
         $data = $this->ssoClient->deleteUser($request->all());

@@ -8,14 +8,7 @@
             "email": "mohamedali@isportz.co"
         }
     ],
-    "require": {
-        "php": "^8.0",
-        "fruitcake/laravel-cors": "^3.0",
-        "guzzlehttp/guzzle": "^7.2",
-        "laravel/framework": "^9.0",
-        "robsontenorio/laravel-keycloak-guard": "^1.4",
-        "timwassenburg/laravel-service-generator": "^1.0"
-    },
+    "require": {},
     "autoload": {
         "psr-4": {
             "App\\": "app/",
