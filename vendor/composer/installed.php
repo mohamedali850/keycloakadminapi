@@ -1,22 +1,22 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => 'dev-develop',
-        'version' => 'dev-develop',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '4dc6109df2f604e5d45763451a7a7fc45fe3141b',
-        'name' => 'packages/keycloakapiservices',
+        'reference' => '6ed15763f16d3982071bd8de13c6963a4cd552ee',
+        'name' => 'jinna/keycloakapiservices',
         'dev' => true,
     ),
     'versions' => array(
-        'packages/keycloakapiservices' => array(
-            'pretty_version' => 'dev-develop',
-            'version' => 'dev-develop',
+        'jinna/keycloakapiservices' => array(
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '4dc6109df2f604e5d45763451a7a7fc45fe3141b',
+            'reference' => '6ed15763f16d3982071bd8de13c6963a4cd552ee',
             'dev_requirement' => false,
         ),
     ),

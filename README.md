@@ -23,16 +23,16 @@ Open the `composer.json` file and add the below code before `"require": {}` obje
 "repositories": [
     {
       "type": "path",
-      "url": "packages/keycloakapiservices"
+      "url": "jinna/keycloakapiservices"
     }
 ],
 ```
-Add package name `packages/keycloakapiservices": "*"` inside `"require": {}` object like below and save the file.
+Add package name `jinna/keycloakapiservices": "*"` inside `"require": {}` object like below and save the file.
 ```shell
     "require": {
         "php": "^8.0",
         "laravel/framework": "^9.0",
-        "packages/keycloakapiservices": "*"
+        "jinna/keycloakapiservices": "*"
     },
 ```
 
@@ -57,7 +57,7 @@ Add the below code in `app/Providers/RouteServiceProvider.php` file inside `boot
             Route::prefix('api')
                 ->middleware('api')
                 ->namespace($this->namespace)
-                ->group(base_path('vendor/packages/keycloakapiservices/src/routes/api.php'));
+                ->group(base_path('vendor/jinna/keycloakapiservices/src/routes/api.php'));
         });
     }
 ```

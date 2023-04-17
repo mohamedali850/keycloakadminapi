@@ -1,5 +1,5 @@
 {
-    "name": "packages/keycloakapiservices",
+    "name": "jinna/keycloakapiservices",
     "description": "This is for keycloak rest api services",
     "license": "MIT",
     "authors": [
