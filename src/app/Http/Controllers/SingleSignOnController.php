@@ -1,11 +1,11 @@
 <?php
 
-namespace KeycloakApiServices\app\Http\Controllers;
+namespace KeycloakApiServices\App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use KeycloakApiServices\app\Services\KeycloakService;
+use KeycloakApiServices\App\Services\KeycloakService;
 
 class SingleSignOnController extends Controller
 {

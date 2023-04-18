@@ -1,6 +1,6 @@
 <?php
 
-namespace KeycloakApiServices\app\Services;
+namespace KeycloakApiServices\App\Services;
 
 use Exception;
 use GuzzleHttp\Client;
