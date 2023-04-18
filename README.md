@@ -13,30 +13,28 @@ For API references visit [Keycloak Admin REST API](https://www.keycloak.org/docs
 
 ### Installation
 
-Faker requires PHP >= 8.0.
+Keycloak admin API requires 
 
-Download this package and put this inside your laravel project's root directory `fm-subscription-back\packages\keycloakapiservices`.
+PHP >= 8.0
 
-Open the `composer.json` file and add the below code before `"require": {}` object.
+Laravel >= 9.0
 
-```shell
-"repositories": [
-    {
-      "type": "path",
-      "url": "jinna/keycloakapiservices"
-    }
-],
-```
-Add package name `jinna/keycloakapiservices": "*"` inside `"require": {}` object like below and save the file.
+Guzzlehttp >= 7.2
+
+Keycloakapiservices package require below dependency packages.
 ```shell
     "require": {
         "php": "^8.0",
         "laravel/framework": "^9.0",
-        "jinna/keycloakapiservices": "*"
+        "guzzlehttp/guzzle": "^7.2"
     },
 ```
+Run the below command to install the package.
+```
+composer require jinna/keycloakapiservices
+```
 
-Run the `composer update` to complete installation.
+Publish the keycloakapi config file using `php artisan vendor:publish --provider="KeycloakApiServices\KeycloakApiServiceProvider" --tag="config"`, A config file `keycloakapiservices.php` will be created in `config` folder
 
 Add `KeycloakApiServices\KeycloakApiServiceProvider::class` in `config/app.php` file, at the end of `'providers' => []` array like below.
 
@@ -73,6 +71,7 @@ KEYCLOAK_ADMIN_CLIENT_ID=admin-cli
 KEYCLOAK_ADMIN_USERNAME=keycloakadminusername
 KEYCLOAK_ADMIN_PASSWORD="keycloakadminpassword"
 ```
+
 ### Documentation
 
 ### Basic Usage
